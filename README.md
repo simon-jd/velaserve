@@ -12,7 +12,7 @@ No production placement or source-pressure mechanism has been implemented. Stage
 
 These results come from a separate cloud test run. The workload, environment, denominators and limitations below belong to that run; local regression checks for this checkout are separate.
 
-- Cut cumulative client-side parser allocation by 87.1% (8,800,000 to 1,135,200 B/op) in a local CPU microbenchmark by adding an explicit no-body-retention mode for measurement callers that reuses a bounded event buffer while still running the same SSE boundary, JSON and error checks; the workload was 256 synthetic 4,096-byte content events with usage and DONE on Go 1.26.6 with identical compile flags on both sides.
+- Cut cumulative client-side parser allocation by 87.1% (8,800,000 to 1,135,200 B/op) in a cloud CPU microbenchmark by adding an explicit no-body-retention mode for measurement callers that reuses a bounded event buffer while still running the same SSE boundary, JSON and error checks; the workload was 256 synthetic 4,096-byte content events with usage and DONE on Go 1.26.6 with identical compile flags on both sides.
 
 - Reported the same-round full-text control at 8,760,000 B/op, so most of the gain comes from explicitly changing the output-retention contract for the measurement API; the result must not be stated as 'full text is also 87.1% faster' or as a model-throughput gain.
 
